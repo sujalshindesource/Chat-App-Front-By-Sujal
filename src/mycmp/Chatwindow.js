@@ -14,7 +14,7 @@ export default function ChatWindow({ currentUser, selectedUser }) {
   useEffect(() => {
     if (!selectedUser) return;
 
-    fetch("http://" + window.location.hostname + ":5000/messages", {
+    fetch("https://web-production-b2389.up.railway.app/", {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ user1: currentUser.email, user2: selectedUser.email })
@@ -80,7 +80,7 @@ export default function ChatWindow({ currentUser, selectedUser }) {
 
   const handleMsgRight = (e, i) => {
     e.preventDefault()
-    fetch("http://" + window.location.hostname + ":5000/messages", {
+    fetch("https://web-production-b2389.up.railway.app/", {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ user1: currentUser.email, user2: selectedUser.email, time: i })

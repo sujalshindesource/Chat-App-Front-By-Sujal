@@ -7,7 +7,7 @@ export default function Login1() {
 
   const handleLogin = async () => {
   try {
-    const response = await fetch("http://" + window.location.hostname + ":5000/login", {
+    const response = await fetch("https://web-production-b2389.up.railway.app/", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ email, password }),

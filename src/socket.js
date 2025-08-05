@@ -1,5 +1,5 @@
 import { io } from 'socket.io-client';
 
-const socket = io("http://" + window.location.hostname + ":5000");
+const socket = io("https://web-production-b2389.up.railway.app/");
 
 export default socket;
