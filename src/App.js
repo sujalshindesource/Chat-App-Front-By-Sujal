@@ -1,23 +1,45 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from 'react';
+import Login from './mycmp/Login';
+import Dashboard from './mycmp/Dashboard';
+import Footer from './mycmp/Footer';
+import Navbar from './mycmp/Navbar';
+
 
 function App() {
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    const token = localStorage.getItem('token');
+    if (token) {
+      fetch("http://" + window.location.hostname + ":5000/verify", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ token }),
+      })
+        .then(res => res.json())
+        .then(data => {
+          if (data.success) {
+            setUser({ email: data.email });
+          } else {
+            localStorage.clear();
+          }
+        });
+    }
+  }, []);
+
+  const isLoggedIn = user !== null;
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {!isLoggedIn && <Navbar />}
+      
+      {isLoggedIn ? (
+        <Dashboard user={user} />
+      ) : (
+        <Login />
+      )}
+
+      {!isLoggedIn && <Footer />}
     </div>
   );
 }

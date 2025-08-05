@@ -1,0 +1,62 @@
+.Login {
+    height: 85vh;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.holder {
+    border-radius: 4px;
+    /* display: flex; */
+    /* justify-content:center ; */
+    background-color: transparent;
+    width: 120vh;
+    height: 80vh;
+    border-radius: 6px;
+    min-width: 480px;
+    font-size: 1.1rem;
+}
+
+.choose {
+    display: flex;
+    justify-content: center;
+}
+
+.choose button:hover{
+    background-color:  #872020 ;
+}
+
+.choose button:active{
+    background-color:  #7e0e0e ;
+}
+
+button {
+    width: 47vh;
+    height: 5vh;
+    border-radius: 12px;
+    margin: 4px;
+    background: #362B2B;
+    color: white;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .Login {
+        height: 85vh;
+        width: 100vw;
+    }
+
+    button {
+        width: 45vw;
+        height: 5vh;
+        border-radius: 12px;
+        margin: 4px;
+        background: #362B2B;
+        color: white;
+    }
+
+}

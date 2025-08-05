@@ -1,0 +1,137 @@
+/* Desktop styles - keeping your original design */
+.contact{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 15px 10px 10px 10px;
+    border-radius: 4px;
+    padding: 8px;
+    transition: background-color 0.2s ease;
+}
+
+.contact:hover {
+    background-color: rgba(255, 255, 255, 0.08);
+}
+
+.pf{
+    border-radius: 50%;
+    border: 1px solid white;
+    width: 65px;
+    height: 65px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 2px;
+    background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
+    transition: all 0.3s ease;
+}
+
+.info p{
+    margin: 2px 2px 2px 15px;
+    font-size: 1rem;
+    transition: color 0.2s ease;
+}
+
+.headpara{
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+    .contact {
+        margin: 0 !important;
+        padding: 16px 20px !important;
+        border-radius: 0 !important;
+        border-bottom: 1px solid #222;
+        position: relative;
+        min-height: 72px;
+        align-items: center;
+    }
+    
+    .contact:hover {
+        background-color: rgba(255, 255, 255, 0.05) !important;
+    }
+    
+    .contact:active {
+        background-color: rgba(255, 255, 255, 0.1) !important;
+        transform: scale(0.98);
+    }
+    
+    .contact:last-child {
+        border-bottom: none;
+    }
+    
+    .pf {
+        width: 56px !important;
+        height: 56px !important;
+        border: 2px solid rgba(255, 255, 255, 0.2) !important;
+        margin-left: 0 !important;
+        margin-right: 16px !important;
+        background: linear-gradient(135deg, #3a3a3a 0%, #2a2a2a 100%) !important;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+        flex-shrink: 0;
+    }
+    
+    .pf:active {
+        transform: scale(0.95);
+    }
+    
+    .info {
+        flex: 1;
+        overflow: hidden;
+    }
+    
+    .info p {
+        margin: 2px 0 !important;
+        font-size: 0.9rem !important;
+        color: #ccc;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    
+    .headpara {
+        font-size: 1.2rem !important;
+        font-weight: 600 !important;
+        color: #fff !important;
+        margin-bottom: 4px !important;
+        line-height: 1.3;
+    }
+    
+    /* Add online status indicator for premium feel */
+    .contact[data-status="online"] .pf::after {
+        content: '';
+        position: absolute;
+        width: 14px;
+        height: 14px;
+        background: #4ade80;
+        border: 2px solid #171616;
+        border-radius: 50%;
+        bottom: 2px;
+        right: 2px;
+        box-shadow: 0 0 8px rgba(74, 222, 128, 0.5);
+    }
+    
+    .contact[data-status="online"] .pf {
+        position: relative;
+    }
+    
+    /* Subtle animation for premium feel */
+    .contact::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 3px;
+        height: 100%;
+        background: linear-gradient(to bottom, #e94560, #ff6b8a);
+        transform: scaleY(0);
+        transition: transform 0.3s ease;
+        border-radius: 0 2px 2px 0;
+    }
+    
+    .contact:active::before {
+        transform: scaleY(1);
+    }
+}

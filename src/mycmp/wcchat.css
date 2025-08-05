@@ -1,0 +1,10 @@
+.wlcchat{
+        display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 1060px;
+}
+
+.msg{
+
+}

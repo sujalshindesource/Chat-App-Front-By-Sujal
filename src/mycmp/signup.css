@@ -1,0 +1,41 @@
+input {
+    display: block;
+    width: 50vh;
+    height: 4vh;
+    border-radius: 4px;
+    margin: 20px 2px 4px 2px;
+    color: rgb(255, 255, 255);
+    background-color: #1e1c1c;
+}
+
+.Signup {
+    display: flex;
+
+    justify-content: center;
+}
+
+p {
+    margin: 4px 2px 4px 2px;
+    font-size: 1.5rem;
+}
+
+.Sign-in {
+    background-color: #7e0e0e;
+    margin: 10px 2px 4px 2px;
+}
+
+@media (max-width: 768px) {
+    .input {
+        display: block;
+        width: 100vw;
+        height: 4vh;
+        border-radius: 4px;
+        margin: 20px 2px 4px 20px;
+        color: rgb(255, 255, 255);
+        background-color: #1e1c1c;
+    }
+
+    .input input{
+        width: 100vw;
+    }
+}
