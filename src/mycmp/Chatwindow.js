@@ -13,8 +13,7 @@ export default function ChatWindow({ currentUser, selectedUser }) {
 
   useEffect(() => {
     if (!selectedUser) return;
-
-    fetch("https://chat-app-by-sujal-production.up.railway.app/messages", {
+    fetch("https://web-production-926e5.up.railway.app/messages", {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ user1: currentUser.email, user2: selectedUser.email })
@@ -80,7 +79,7 @@ export default function ChatWindow({ currentUser, selectedUser }) {
 
   const handleMsgRight = (e, i) => {
     e.preventDefault()
-    fetch("https://chat-app-by-sujal-production.up.railway.app/messages", {
+    fetch("https://web-production-926e5.up.railway.app/messages", {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ user1: currentUser.email, user2: selectedUser.email, time: i })

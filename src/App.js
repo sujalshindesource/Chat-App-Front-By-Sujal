@@ -11,7 +11,7 @@ function App() {
   useEffect(() => {
     const token = localStorage.getItem('token');
     if (token) {
-      fetch("https://web-production-b2389.up.railway.app/verify", {
+      fetch("https://web-production-926e5.up.railway.app/verify", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ token }),

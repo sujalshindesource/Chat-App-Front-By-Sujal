@@ -14,7 +14,7 @@ export default function ChatList({ setSelectedUser }) {
   }
 
   useEffect(() => {
-    fetch("https://web-production-b2389.up.railway.app/users") 
+    fetch("https://web-production-926e5.up.railway.app/users") 
       .then(res => res.json())
       .then(data => {
         const filtered = data.filter(u => u.email !== currentUserEmail);
